@@ -85,7 +85,7 @@ lora.set_config(app_eui=app_eui,
 
 print('Joining TTN...')
 lora.join_otaa()
-lora.dr = 5
+lora.dr = 4
 
 print('Entering application loop')
 print('You can send downlinks from the TTN console')
