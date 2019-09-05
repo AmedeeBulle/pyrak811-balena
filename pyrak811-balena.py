@@ -1,25 +1,5 @@
 #!/usr/bin/env python3
-"""RAK811 balena.io demo.
 
-Minimalistic Balena / OTAA demo: send the CPU temperature every 5 minutes in
-Cayenne LPP format.
-
-Copyright 2019 Philippe Vanhaesendonck
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-SPDX-License-Identifier: Apache-2.0
-"""
 from os import environ
 from struct import pack
 from sys import exit
@@ -33,14 +13,14 @@ from serial.serialutil import SerialException
 # Application EUI and Key are required parameters
 app_eui = environ.get('APP_EUI')
 app_key = environ.get('APP_KEY')
+
 # LoRaWan band
 band = environ.get('BAND', 'EU868')
 
 # Serial port may change depending on the RPi and its configuration:
 #   - mini UART: /dev/ttyS0
 #   - PL011: /dev/ttyAMA0
-# The rak811 library uses by default /dev/serial0 symlink which is not present
-# in the balena container
+# The rak811 library uses by default /dev/serial0 symlink which is not present in the balena container
 port = environ.get('SERIAL_PORT', '/dev/ttyS0')
 # The /sys path exposing CPU temperature:
 path_cpu_temp = environ.get('PATH_CPU_TEMP',
