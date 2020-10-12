@@ -5,6 +5,14 @@ This is a basic example on how to use [PiSupply IoT LoRa Node pHAT for Raspberry
 
 The application will join [TheThingsNetwork](https://www.thethingsnetwork.org) using OTAA and send the CPU temperature in [Cayenne LPP](https://mydevices.com/cayenne/docs/lora/#lora-cayenne-low-power-payload) format every 5 minutes.
 
+## Getting Started
+
+You can one-click-deploy this project to balenaCloud using the button below:
+
+[![balena deploy button](https://balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/AmedeeBulle/pyrak811-balena&defaultDeviceType=raspberry-pi)
+
+## Manual Deployment
+
 All you need to do is:
 - Create an application in [balenaCloud](https://www.balena.io/), add a device, flash the generated image on an SD Card and boot your Raspberry Pi with it
 - When your device appears in the [balenaCloud](https://www.balena.io/) console, go to `Device Configuration` and ensure that `UART` is enabled
